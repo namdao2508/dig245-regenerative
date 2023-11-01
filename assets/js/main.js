@@ -128,7 +128,7 @@ for(const header of headers){
 }
 
 const svgContainer = document.getElementById("graphStock");
-const graphWidth = 900;
+const graphWidth = 1200;
 const graphHeight = 300;
 
 // Define your data arrays for different time intervals
@@ -265,6 +265,7 @@ function updateGraph(data){
             }else{
                 temp = data1D;
             }
+
             if(temp[temp.length - 1] - temp[0] > 0){
                 text.setAttribute("fill", "rgb(0, 200, 5)");
             }else{
