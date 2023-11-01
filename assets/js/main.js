@@ -23,6 +23,54 @@ const stockData = [
     { name: 'VivaCraft Brewing', symbol: 'VCB', industry: 'Beverages' },
     { name: 'WildFire Energy', symbol: 'WFE', industry: 'Energy' }
 ];
+
+//CEO first names
+const firstNames = [
+    "Alice",
+    "Bob",
+    "Charlie",
+    "David",
+    "Emma",
+    "Frank",
+    "Grace",
+    "Hannah",
+    "Isaac",
+    "Jack",
+    "Katherine",
+    "Liam",
+    "Mia",
+    "Noah",
+    "Olivia",
+    "Peter",
+    "Quinn",
+    "Rose",
+    "Samuel",
+    "Sophia"
+  ];
+
+  //CEO last names
+  const lastNames = [
+    "Smith",
+    "Johnson",
+    "Brown",
+    "Williams",
+    "Jones",
+    "Davis",
+    "Miller",
+    "Wilson",
+    "Moore",
+    "Taylor",
+    "Anderson",
+    "Thomas",
+    "Jackson",
+    "White",
+    "Harris",
+    "Martin",
+    "Thompson",
+    "Garcia",
+    "Martinez",
+    "Robinson"
+  ];
   
 
 const stockName = document.getElementById("stockName");
@@ -255,7 +303,16 @@ updateGraph(currentData);
 
 //Write description of company
 const description = document.getElementById("Description");
-description.style.color = lineColor;
-description.textContent = "Founded in " + (Math.floor(Math.random()*(currentYear-1950))+1950)+ ", " + stockData[random].name + " (" + stockData[random].symbol +") is a prominent player in the "
+description.style.color = textColor;
+var foundedDate = (Math.floor(Math.random()*(currentYear-1950))+1950);
+description.textContent = "Founded in " + foundedDate + ", " + stockData[random].name + " (" + stockData[random].symbol +") is a prominent player in the "
 + stockData[random].industry + " sector, known for its dedication to innovation and excellence. With a strong track record of growth and a commitment to delivering quality products and services, the company continues to make strides in its field. Their focus on "
-+ stockData[random].industry + " has allowed them to remain a competitive force, earning the trust of investors and customers alike. As they navigate the challenges and opportunities of the market, " +  stockData[random].name + " remains a key influencer in the field";
++ stockData[random].industry + " has allowed them to remain a competitive force, earning the trust of investors and customers alike. As they navigate the challenges and opportunities of the market, " +  stockData[random].name + " remains a key influencer in their field.";
+
+const CEOname = document.getElementById("CEOName");
+CEOname.style.color = textColor;
+CEOname.textContent = firstNames[(Math.floor(Math.random()*(firstNames.length)))] + " " + lastNames[(Math.floor(Math.random()*(lastNames.length)))];
+
+const fDate = document.getElementById("Founded");
+fDate.style.color = textColor;
+fDate.textContent = foundedDate;

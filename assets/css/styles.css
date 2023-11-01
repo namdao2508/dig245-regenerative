@@ -1,5 +1,4 @@
 body{
-    overflow:hidden;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -61,6 +60,15 @@ body{
     border-bottom: 1px black;
 }
 
+.details{
+    margin-top: 2%;
+    font-weight: bold;
+}
+
+.borderBtn{
+    border-bottom: 1px solid white; 
+}
+
 @media (max-width: 500px) {
     .circle{
         width: 50px; 
@@ -68,7 +76,6 @@ body{
         font-size: 8px;
     }
 }
-
 
 @media (max-width: 450px) {
     .circle{
