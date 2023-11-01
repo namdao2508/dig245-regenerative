@@ -308,7 +308,7 @@ description.style.color = textColor;
 var foundedDate = (Math.floor(Math.random()*(currentYear-1950))+1950);
 description.textContent = "Founded in " + foundedDate + ", " + stockData[random].name + " (" + stockData[random].symbol +") is a prominent player in the "
 + stockData[random].industry + " sector, known for its dedication to innovation and excellence. With a strong track record of growth and a commitment to delivering quality products and services, the company continues to make strides in its field. Their focus on "
-+ stockData[random].industry + " has allowed them to remain a competitive force, earning the trust of investors and customers alike. As they navigate the challenges and opportunities of the market, " +  stockData[random].name + " remains a key influencer in their field.";
++ stockData[random].industry.toLowerCase() + " has allowed them to remain a competitive force, earning the trust of investors and customers alike. As they navigate the challenges and opportunities of the market, " +  stockData[random].name + " remains a key influencer in their field.";
 
 const CEOname = document.getElementById("CEOName");
 CEOname.style.color = textColor;
