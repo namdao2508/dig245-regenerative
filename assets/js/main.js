@@ -1,101 +1,29 @@
 //list of fake stock name and its symbol
 const stockData = [
-    { name: 'Alpha Industries', symbol: 'ALPH' },
-    { name: 'Beta Corporation', symbol: 'BETA' },
-    { name: 'Gamma Holdings', symbol: 'GAMA' },
-    { name: 'Delta Ventures', symbol: 'DELT' },
-    { name: 'Epsilon Securities', symbol: 'EPSI' },
-    { name: 'Zeta Investments', symbol: 'ZETA' },
-    { name: 'Eta Financials', symbol: 'ETAF' },
-    { name: 'Theta Equities', symbol: 'THET' },
-    { name: 'Iota Capital', symbol: 'IOTA' },
-    { name: 'Kappa Trading', symbol: 'KAPP' },
-    { name: 'Lambda Assets', symbol: 'LAMB' },
-    { name: 'Mu Exchange', symbol: 'MU' },
-    { name: 'Nu Stocks', symbol: 'NU' },
-    { name: 'Xi Investments', symbol: 'XI' },
-    { name: 'Omicron Securities', symbol: 'OMIC' },
-    { name: 'Pi Financials', symbol: 'PIFI' },
-    { name: 'Rho Holdings', symbol: 'RHO' },
-    { name: 'Sigma Ventures', symbol: 'SIGM' },
-    { name: 'Tau Industries', symbol: 'TAUI' },
-    { name: 'Upsilon Corporation', symbol: 'UPSI' },
-    { name: 'Phi Equities', symbol: 'PHIE' },
-    { name: 'Chi Investments', symbol: 'CHI' },
-    { name: 'Psi Trading', symbol: 'PSI' },
-    { name: 'Omega Capital', symbol: 'OMEG' },
-    { name: 'Acme Stocks', symbol: 'ACME' },
-    { name: 'Widget Holdings', symbol: 'WIDG' },
-    { name: 'Tech Ventures', symbol: 'TECH' },
-    { name: 'Innovative Equities', symbol: 'INOV' },
-    { name: 'Global Investments', symbol: 'GLBL' },
-    { name: 'Sunrise Securities', symbol: 'SUNS' },
-    { name: 'Moonshot Financials', symbol: 'MOON' },
-    { name: 'Stellar Holdings', symbol: 'STEL' },
-    { name: 'Galaxy Ventures', symbol: 'GALX' },
-    { name: 'Cosmic Investments', symbol: 'COSM' },
-    { name: 'Starlight Equities', symbol: 'STAR' },
-    { name: 'Nebula Corporation', symbol: 'NEBU' },
-    { name: 'Comet Trading', symbol: 'COMT' },
-    { name: 'Asteroid Assets', symbol: 'ASTR' },
-    { name: 'Planet Stocks', symbol: 'PLAN' },
-    { name: 'Rocket Financials', symbol: 'ROCK' },
-    { name: 'Satellite Holdings', symbol: 'SATE' },
-    { name: 'Astronaut Securities', symbol: 'ASTO' },
-    { name: 'Orbit Investments', symbol: 'ORBT' },
-    { name: 'Space Ventures', symbol: 'SPAC' },
-    { name: 'Gravity Equities', symbol: 'GRAV' },
-    { name: 'Black Hole Corporation', symbol: 'BLCK' },
-    { name: 'Supernova Stocks', symbol: 'SPNV' },
-    { name: 'Alien Technologies', symbol: 'ALIN' },
-    { name: 'Interstellar Trading', symbol: 'INTR' },
-    { name: 'Cosmonaut Investments', symbol: 'COSO' },
-    { name: 'Constellation Financials', symbol: 'CONS' },
-    { name: 'Milky Way Holdings', symbol: 'MILK' },
-    { name: 'Andromeda Equities', symbol: 'ANDR' },
-    { name: 'UFO Securities', symbol: 'UFO' },
-    { name: 'SpaceX Assets', symbol: 'SPX' },
-    { name: 'Rocketeer Stocks', symbol: 'RCKT' },
-    { name: 'Starship Ventures', symbol: 'SHIP' },
-    { name: 'Cosmic Travelers', symbol: 'COST' },
-    { name: 'Astronomical Capital', symbol: 'ASTR' },
-    { name: 'Comet Holdings', symbol: 'COMT' },
-    { name: 'Saturn Trading', symbol: 'SATN' },
-    { name: 'Neptune Investments', symbol: 'NEPT' },
-    { name: 'Pluto Financials', symbol: 'PLUT' },
-    { name: 'Mars Equities', symbol: 'MARS' },
-    { name: 'Venus Corporation', symbol: 'VENS' },
-    { name: 'Jupiter Securities', symbol: 'JUP' },
-    { name: 'Mercury Assets', symbol: 'MERC' },
-    { name: 'Apollo Stocks', symbol: 'APLO' },
-    { name: 'Orion Ventures', symbol: 'ORIO' },
-    { name: 'Hubble Investments', symbol: 'HUBL' },
-    { name: 'Asteroid Financials', symbol: 'ASTR' },
-    { name: 'Big Bang Equities', symbol: 'BIBE' },
-    { name: 'Quasar Holdings', symbol: 'QUAS' },
-    { name: 'Supernova Trading', symbol: 'SUNO' },
-    { name: 'Pulsar Securities', symbol: 'PULS' },
-    { name: 'Cosmic Rays Assets', symbol: 'CORA' },
-    { name: 'Black Matter Stocks', symbol: 'BLMA' },
-    { name: 'Alien Civilization Ventures', symbol: 'ALCV' },
-    { name: 'Space Odyssey Investments', symbol: 'SOIN' },
-    { name: 'Stargate Financials', symbol: 'STGA' },
-    { name: 'Astro Explorer Equities', symbol: 'ASXP' },
-    { name: 'Cosmic Dust Corporation', symbol: 'CODU' },
-    { name: 'Uranus Securities', symbol: 'URAN' },
-    { name: 'Hyperspace Assets', symbol: 'HSPA' },
-    { name: 'Exoplanet Stocks', symbol: 'EXPL' },
-    { name: 'Celestial Ventures', symbol: 'CELE' },
-    { name: 'Time Traveler Financials', symbol: 'TTIM' },
-    { name: 'Starfleet Equities', symbol: 'STFE' },
-    { name: 'Warp Drive Investments', symbol: 'WARP' },
-    { name: 'Aurora Borealis Corporation', symbol: 'AURB' },
-    { name: 'Nebula Securities', symbol: 'NEBS' },
-    { name: 'Cybertron Assets', symbol: 'CYBR' },
-    { name: 'Dark Matter Stocks', symbol: 'DMAT' },
-    { name: 'Astrobiology Ventures', symbol: 'ASTB' },
-    { name: 'Quantum Leap Financials', symbol: 'QLEP' },
+    { name: 'AeroTech Inc.', symbol: 'ATI', industry: 'Aerospace' },
+    { name: 'BioPharm Corp.', symbol: 'BPC', industry: 'Biotechnology' },
+    { name: 'CloudCom Systems', symbol: 'CCS', industry: 'Technology' },
+    { name: 'DeltaEnergy Ltd.', symbol: 'DEL', industry: 'Energy' },
+    { name: 'EcoFoods Group', symbol: 'EFG', industry: 'Food and Beverage' },
+    { name: 'Fusion Motors Inc.', symbol: 'FMI', industry: 'Automotive' },
+    { name: 'GreenTech Solutions', symbol: 'GTS', industry: 'Renewable Energy' },
+    { name: 'HealthLinx Corp.', symbol: 'HLC', industry: 'Healthcare' },
+    { name: 'InnoWare Technologies', symbol: 'IWT', industry: 'Information Technology' },
+    { name: 'Jupiter Mining Co.', symbol: 'JMC', industry: 'Mining' },
+    { name: 'LuxeFash Inc.', symbol: 'LXF', industry: 'Fashion and Apparel' },
+    { name: 'MetaData Systems', symbol: 'MDS', industry: 'Software' },
+    { name: 'NexaTech Group', symbol: 'NTG', industry: 'Telecommunications' },
+    { name: 'OptiMedia Networks', symbol: 'OMN', industry: 'Media and Entertainment' },
+    { name: 'PentaLogix Inc.', symbol: 'PLX', industry: 'Logistics' },
+    { name: 'Quasar Dynamics', symbol: 'QDS', industry: 'Electronics' },
+    { name: 'RevoPharma Ltd.', symbol: 'RPL', industry: 'Pharmaceuticals' },
+    { name: 'SolarWorks Corp.', symbol: 'SWC', industry: 'Solar Energy' },
+    { name: 'TechNexx Solutions', symbol: 'TNS', industry: 'Information Technology' },
+    { name: 'United Foods Inc.', symbol: 'UFI', industry: 'Food and Beverage' },
+    { name: 'VivaCraft Brewing', symbol: 'VCB', industry: 'Beverages' },
+    { name: 'WildFire Energy', symbol: 'WFE', industry: 'Energy' }
 ];
+  
 
 const stockName = document.getElementById("stockName");
 const buyPercent = document.getElementById("buy%");
@@ -121,6 +49,7 @@ const headers = document.querySelectorAll(".headers");
 const labels = document.querySelectorAll(".label");
 const now = new Date();
 const currentHour = now.getHours();
+const currentYear = now.getFullYear();
 
 // Define different background colors based on time of day
 let backgroundColor;
@@ -227,13 +156,7 @@ data.forEach((value, index) => {
         circle.style.opacity = 1;
     });
 
-    if (currentHour >= 9 && currentHour < 17) {
-        // Market Opens (9am - 5pm)
-        tooltip.style.color = "black";
-    } else {
-        // Evening and Pre-Market (5pm - 9am)
-        tooltip.style.color = "white";
-    }
+    tooltip.style.color = lineColor;
 
     svg.appendChild(circle);
 });
@@ -272,5 +195,10 @@ if(data[data.length -1] - data[0] >= 0){
 }else{
     change.textContent = "- $" + Math.abs((data[data.length -1] - data[0]).toFixed(2));
 }
-
 change.style.color = color;
+
+const description = document.getElementById("Description");
+description.style.color = lineColor;
+description.textContent = "Founded in " + (Math.floor(Math.random()*(currentYear-1950))+1950)+ ", " + stockData[random].name + " is a prominent player in the "
++ stockData[random].industry + " sector, known for its dedication to innovation and excellence. With a strong track record of growth and a commitment to delivering quality products and services, the company continues to make strides in its field. Their focus on "
++ stockData[random].industry + " has allowed them to remain a competitive force, earning the trust of investors and customers alike. As they navigate the challenges and opportunities of the market, " +  stockData[random].name + " remains a key influencer in the field";
