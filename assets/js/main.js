@@ -118,21 +118,25 @@ if((100 - s) < 0){
 }
 
 const headers = document.querySelectorAll(".headers");
+const labels = document.querySelectorAll(".label");
 const now = new Date();
 const currentHour = now.getHours();
 
 // Define different background colors based on time of day
 let backgroundColor;
 let textColor;
+let lineColor;
 
 if (currentHour >= 9 && currentHour < 17) {
     // Market Opens (9am - 5pm)
     backgroundColor = 'white';
     textColor = "black";
+    lineColor = "rgb(30,33,36)";
 } else {
     // Evening and Pre-Market (5pm - 9am)
     backgroundColor = 'black';
     textColor = "white";
+    lineColor = "white";
 }
 
 // Apply the background color to the body element
@@ -141,10 +145,14 @@ for(const header of headers){
     header.style.color = textColor;
 }
 
+for(const label of labels){
+    label.style.color = textColor;
+}
+
 // The following creates the SVG element for 
 // a line chart to represent the stock
-const graphWidth = 800;
-const graphHeight = 500;
+const graphWidth = 900;
+const graphHeight = 300;
 
 var data = new Array(16);
 for(let i = 0; i < data.length; i++){
@@ -162,8 +170,12 @@ svg.setAttribute("viewBox", `0 0 ${graphWidth+50} ${graphHeight+50}`); // Update
 
 // Create a polyline element for the line graph
 const polyline = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
-var color;
 
+// Create a polyline element for the bottom of the graph
+const polyline2 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+
+// Get color of graph
+var color;
 if(data[data.length - 1] < data[0]){
     color = "rgb(255, 80, 0)";
 }else{
@@ -174,13 +186,19 @@ polyline.setAttribute("fill", "none");
 polyline.setAttribute("stroke", color);
 polyline.setAttribute("stroke-width", "1");
 
+polyline2.setAttribute("fill", "none");
+polyline2.setAttribute("stroke", lineColor);
+polyline2.setAttribute("stroke-width", "1");
+
 // Calculate the points for the polyline based on the data and the new height
 const points = data.map((value, index) => `${(index * (graphWidth / (data.length - 1)) )},${graphHeight - (value * (graphHeight / 50))}`).join(" ");
+const points2 = data.map((value, index) => `${(index * (graphWidth / (data.length - 1)) )},${graphHeight}`).join(" ");
 polyline.setAttribute("points", points);
+polyline2.setAttribute("points", points2);
 
 // Append the polyline to the SVG element
 svg.appendChild(polyline);
-
+svg.appendChild(polyline2);
 
 // Add circles to represent data points
 data.forEach((value, index) => {
@@ -209,11 +227,50 @@ data.forEach((value, index) => {
         circle.style.opacity = 1;
     });
 
+    if (currentHour >= 9 && currentHour < 17) {
+        // Market Opens (9am - 5pm)
+        tooltip.style.color = "black";
+    } else {
+        // Evening and Pre-Market (5pm - 9am)
+        tooltip.style.color = "white";
+    }
+
     svg.appendChild(circle);
 });
+
+const timeIntervals = ["1D", "1M", "1Y", "5Y"];
+const xPositions = [0, 50, 100, 150];
+const spacing = graphWidth / (timeIntervals.length - 1); // Adjust the spacing as needed
+timeIntervals.forEach((interval, index) => {
+    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("y", graphHeight + 40); // Adjust the vertical position as needed
+    text.setAttribute("x", xPositions[index]);
+    text.setAttribute("text-anchor", "start"); // Set to "start" for left alignment
+    text.setAttribute("fill", lineColor); // Text color
+    text.textContent = interval;
+
+    text.addEventListener("mouseover", (event) => {
+        text.style.opacity = 0.5;
+    });
+
+    text.addEventListener("mouseout", () => {
+        text.style.opacity = 1;
+    });
+
+    svg.appendChild(text);
+});
+
+// Append the SVG element to the container
+svgContainer.appendChild(svg);
 
 const price = document.getElementById("Price");
 price.textContent = "$" + data[data.length -1];
 
-// Append the SVG element to the container
-svgContainer.appendChild(svg);
+const change = document.getElementById("Change");
+if(data[data.length -1] - data[0] >= 0){
+    change.textContent = "+ $" + (data[data.length -1] - data[0]).toFixed(2);
+}else{
+    change.textContent = "- $" + Math.abs((data[data.length -1] - data[0]).toFixed(2));
+}
+
+change.style.color = color;

@@ -18,37 +18,45 @@
         <div class="row justify-content-start text-start">
             <div class="col-1"></div>
             <div class="col text-white">
-                <h2 class = "headers" id="stockName">Made-Up Stock/ETF</h2>
+                <h3 class = "headers" id="stockName"></h3>
             </div>
         </div>
         <div class="row justify-content-start text-start">
             <div class="col-1"></div>
             <div class="col text-white">
-                <h2 class = "headers" id="Price">$</h2>
+                <h4 class = "headers" id="Price"></h4>
             </div>
         </div>
-        <div class="row justify-content-center text-white">
-            <div class="col-10 col-md-8" id="graphStock"></div>
-            <div class="col-12 col-md-3 box" id="advice">
+        <div class="row justify-content-start text-start">
+            <div class="col-1"></div>
+            <div class="col text-white">
+                <h6 class = "headers" id="Change"></h5>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <div class="col-10 col-md-9" id="graphStock"></div>
+            <div class="col-2 justify-content-center text-center">
                 <!-- Circle 2: "Buy" -->
                 <div class="circle" id="buy">
                     <div class="number" id="buy%"></div>
+                    <div>advise buy</div>
                 </div>
-                <div class="label">of investors advise to buy</div>
                 <!-- Circle 2: "Hold" -->
-                <div class="circle" id="hold">
+                <div class="circle text-white" id="hold">
                     <div class="number" id="hold%"></div>
+                    <div>advise hold</div>
                 </div>
-                <div class="label">of investors advise to hold</div>
                 <!-- Circle 3: "Sell" -->
                 <div class="circle" id="sell">
                     <div class="number" id="sell%"></div>
+                    <div>advise sell</div>
                 </div>
-                <div class="label">of investors advise to sell</div>
             </div>
         </div>
+        <div class="row justify-content-center">
+        </div>
 
-        <div class="tooltip container" id="tooltip">$</div>
+        <div class="tooltip container" id="tooltip"></div>
     </div>
     <script src="assets/js/main.js"></script>
 </body>

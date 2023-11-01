@@ -1,9 +1,14 @@
 body{
     overflow:hidden;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .box{
     background-color: rgb(30, 33, 36);
+}
+
+#stockName{
+    margin-top: 3%;
 }
 
 #graphStock {
@@ -31,19 +36,15 @@ body{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 100px; 
-    height: 100px; 
-    font-size: 18px;
+    width: 70px; 
+    height: 70px; 
     margin: 10px; 
+    font-size: 11px; /* Font size for the numbers */
 }
 
 .number {
-    font-size: 24px; /* Font size for the numbers */
     font-weight: bold;
-}
-
-.label {
-    text-align: center;
+    font-size: 15px;
 }
 
 #buy{
